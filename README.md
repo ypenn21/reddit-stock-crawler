@@ -18,10 +18,12 @@ picks_ayz = int     define # of picks for sentiment analysis
 </pre>
 
 # How to run:
+
+    python -m spacy download en_core_web_sm
     
     pip install -r requirements.txt
     python3 reddit-sentiment-analysis.py
-    
+    python3 reddit-sentiment-analysis.py >> output.txt
     
 ## Sample Output
 It took 1574.61 seconds to analyze 14236 comments in 8 posts in 1 subreddits.

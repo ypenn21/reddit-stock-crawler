@@ -26,8 +26,8 @@ import emoji    # removes emojis
 import re   # removes links
 import en_core_web_sm
 import string
-
-
+import nltk
+import spacy
 def data_extractor(reddit):
     '''extracts all the data from reddit
     Parameter: reddt: reddit obj
@@ -165,7 +165,8 @@ def sentiment_analysis(picks_ayz, a_comments, symbols):
 
     '''
     scores = {}
-     
+    nltk.download('vader_lexicon') 
+    nltk.download('wordnet')
     vader = SentimentIntensityAnalyzer()
     vader.lexicon.update(new_words)     # adding custom words from data.py 
     picks_sentiment = list(symbols.keys())[0:picks_ayz]
@@ -186,6 +187,7 @@ def sentiment_analysis(picks_ayz, a_comments, symbols):
             lower_tokenized = [word.lower() for word in tokenized_string] # convert to lower case
             
             # remove stop words
+            #nlp = spacy.load("en_core_web_sm")
             nlp = en_core_web_sm.load()
             stopwords = nlp.Defaults.stop_words
             sw_removed = [word for word in lower_tokenized if not word in stopwords]
@@ -273,9 +275,9 @@ def main():
     
     # reddit client
     reddit = praw.Reddit(user_agent="Comment Extraction",
-                         client_id="",
-                         client_secret="",
-                         username="",
+                         client_id="orUJJkMZ3bm-BA",
+                         client_secret="a93t5105R521CieaJQUxKUrhp90cYA",
+                         username="hoodrichcapital",
                          password="")
 
     posts, c_analyzed, tickers, titles, a_comments, picks, subs, picks_ayz = data_extractor(reddit)
