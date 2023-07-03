@@ -253,15 +253,15 @@ def visualization(picks_ayz, scores, picks, times, top):
     
     # Date Visualization
     # most mentioned picks    
-    squarify.plot(sizes=times, label=top, alpha=.7 )
-    plt.axis('off')
-    plt.title(f"{picks} most mentioned picks")
+    # squarify.plot(sizes=times, label=top, alpha=.7 )
+    # plt.axis('off')
+    # plt.title(f"{picks} most mentioned picks")
     #plt.show()
     
     # Sentiment analysis
-    df = df.astype(float)
-    colors = ['red', 'springgreen', 'forestgreen', 'coral']
-    df.plot(kind = 'bar', color=colors, title=f"Sentiment analysis of top {picks_ayz} picks:")
+    #df = df.astype(float)
+    #colors = ['red', 'springgreen', 'forestgreen', 'coral']
+    #df.plot(kind = 'bar', color=colors, title=f"Sentiment analysis of top {picks_ayz} picks:")
     
     
     #plt.show()
@@ -277,7 +277,7 @@ def main():
     reddit = praw.Reddit(user_agent="Comment Extraction",
                          client_id="",
                          client_secret="",
-                         username="",
+                         username="hoodrichcapital",
                          password="")
 
     posts, c_analyzed, tickers, titles, a_comments, picks, subs, picks_ayz = data_extractor(reddit)
