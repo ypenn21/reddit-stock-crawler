@@ -17,7 +17,7 @@ picks = int         define # of picks here, prints as "Top ## picks are:"
 picks_ayz = int     define # of picks for sentiment analysis
 </pre>
 
-# How to run:
+# How to run need python 3.9.2:
 
     python -m spacy download en_core_web_sm
     
