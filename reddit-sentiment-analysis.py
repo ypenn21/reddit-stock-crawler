@@ -275,9 +275,9 @@ def main():
     
     # reddit client
     reddit = praw.Reddit(user_agent="Comment Extraction",
-                         client_id="orUJJkMZ3bm-BA",
-                         client_secret="a93t5105R521CieaJQUxKUrhp90cYA",
-                         username="hoodrichcapital",
+                         client_id="",
+                         client_secret="",
+                         username="",
                          password="")
 
     posts, c_analyzed, tickers, titles, a_comments, picks, subs, picks_ayz = data_extractor(reddit)
